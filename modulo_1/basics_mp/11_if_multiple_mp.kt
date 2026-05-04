@@ -1,26 +1,19 @@
-// Online Kotlin compiler to run Kotlin program online
-// Print "Try programiz.pro" message
-
 fun main() {
-  println("Controles de Flujo")
-  println("Condicional If - Multiples condiciones")
-  println("Presion sistolica mmHg")
-  val sistolica = readLine()?.toIntOrNull()?:0
+  println("Loyaltee - Segmentación de Clientes")
+  println("Ingrese el volumen de compras anuales ($):")
+  val volumenCompras = readLine()?.toIntOrNull() ?: 0
   
-  val clasificacion = if(sistolica<=90){
-      "Hipotension"
-  } else if(sistolica<119){
-      "Normal"
-  } else if(sistolica<129){
-      "Elevada"
-  } else if(sistolica<139){
-      "Hipertension Grado 1"
-  } else if(sistolica<179){
-      "Hipertension Grado 2"
+  val categoria = if (volumenCompras <= 100) {
+      "Bronce (Cliente Nuevo)"
+  } else if (volumenCompras < 500) {
+      "Plata (Cliente Frecuente)"
+  } else if (volumenCompras < 1500) {
+      "Oro (Cliente VIP)"
+  } else if (volumenCompras < 5000) {
+      "Platino (Socio Estratégico)"
   } else {
-      "Crisis Hipertensiva"
+      "Embajador de Marca"
   }
   
-  println("Clasificacion: $clasificacion")
- 
+  println("El cliente ha sido clasificado como: $categoria")
 }

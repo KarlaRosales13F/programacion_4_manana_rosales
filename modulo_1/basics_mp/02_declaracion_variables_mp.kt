@@ -1,16 +1,14 @@
 fun main() {
-    //no mutable
-    val nombre="ana"
-    val edad: Int= 28
-    val pi=3.14159
+    // Valores inmutables
+    val idCliente = "L-9982"
+    val nombreEmpresa = "Café Central"
     
-    //mutable
-    var contador=0
-    contador = contador +1
-    println(contador)
-    contador = contador -1
-    println(contador)
+    // Valores mutables
+    var puntosAcumulados = 150
+    println("Puntos actuales: $puntosAcumulados")
     
-    println("$nombre tiene $edad años")
+    puntosAcumulados += 50 // Cliente realizó una compra
+    println("Nuevos puntos tras compra: $puntosAcumulados")
     
+    println("El cliente con ID $idCliente en $nombreEmpresa tiene $puntosAcumulados puntos.")
 }

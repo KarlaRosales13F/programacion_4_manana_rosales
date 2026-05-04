@@ -1,26 +1,17 @@
 fun main() {
-
-    //Readline
-    println("Escribe tu nombre")
-    val nombre= readLine()
-    println("Nombre incluido : $nombre") 
+    println("--- Registro de Nuevo Cliente Loyaltee ---")
     
-    println("Escribe Apellido: ")
-    val pellido= readLine() ?: "anónimo"
-    println("Apellido incluido : $apellido")
+    print("Ingresa el correo electrónico: ")
+    val email = readLine()
     
-    /*
-    Comentarios multilinea
-    */
+    print("Ingresa el código de referido (opcional): ")
+    val referido = readLine() ?: "Sin referido"
     
-    //comentario de una sola linea
+    println("Registro exitoso para: $email. Código aplicado: $referido")
     
     /**
-    *multilineas
-    *comentarios
-    *@param nombre del usuario
-    *@return un saludo personalizado
-    */
-    
-    
+     * Documentación de Función:
+     * @param email Correo del cliente capturado por consola.
+     * @return Mensaje de confirmación de alta en el sistema.
+     */
 }

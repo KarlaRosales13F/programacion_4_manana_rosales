@@ -1,27 +1,29 @@
 fun main() {
-  println("Controles de Flujo")
-  println("Condicional If - else")
-  println("Tiene seguro medico s/n: ")
-  val tieneSeguro =readLine()?.trim()?.lowercase()=="ss"
-  println("Costo Base: ")
-  val costoBase =readLine()?.toDoubleOrNull()?:0.0
-  if(tieneSeguro){
-      val cobertura = costoBase*0.80
-      println("Seguro cubre: $${"%.2f".format(cobertura)}")
-  } else{
-      println("Pago Particular: $${"%.2f".format(CostoBase)"})
-  }
+    println("--- Cálculo de Beneficio para el Comercio ---")
+    
+    print("¿Es una cuenta Business Plus? (s/n): ")
+    val esPlus = readLine()?.trim()?.lowercase() == "s"
+    
+    print("Monto de transacciones mensuales: ")
+    val montoMensual = readLine()?.toDoubleOrNull() ?: 0.0
+    
+    if (esPlus) {
+        val comisionLoyaltee = montoMensual * 0.02 // 2% de comisión
+        println("Comisión reducida Loyaltee Plus: $${"%.2f".format(comisionLoyaltee)}")
+    } else {
+        val comisionEstandar = montoMensual * 0.05 // 5% de comisión
+        println("Comisión Estándar: $${"%.2f".format(comisionEstandar)}")
+    }
 }
 
-//ejercicio en clase:
+// Ejercicio: Clasificación de cupones
 fun main() {
-  println("Controles de Flujo")
-  println("Condicional If - else")
-  println("Su examen es de laboratorio o imagen l/i")
-  val examenLaboratorio =readLine()?.trim()?.lowercase()=="l"
-  if(examenLaboratorio){
-      println("Debe estar en ayunas")
-  } else{
-      println("No debe ir en ayunas")
-  }
+    println("Tipo de Cupón: ¿Es Físico o Digital? (f/d)")
+    val esDigital = readLine()?.trim()?.lowercase() == "d"
+    
+    if (esDigital) {
+        println("Enviar código QR al correo del cliente.")
+    } else {
+        println("Imprimir ticket de validación para el mostrador.")
+    }
 }

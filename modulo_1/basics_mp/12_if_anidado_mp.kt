@@ -1,24 +1,24 @@
 fun main() {
-  println("Controles de Flujo")
-  println("Condicional If - Anidado")
-  println("Tiene antecedentes cardiacos?")
-  val tieneAntecedentes =readLine()?.trim()?.lowercase()=="s"
-  println("Frecuencia Cardiaca (lpm)")
-  val frecuencia =readLine()?.toIntOrNull()?:0
-  if(tieneAntecedentes){
-      println("Paciente con antecedentes cardiacos")
-      if(frecuencia<50) {
-          println("Bradicaria severa")
-      } else{
-          println("Frecuencia Normal")
+  println("Verificación de Beneficios Loyaltee")
+  println("¿El comercio tiene convenio activo? (s/n)")
+  val tieneConvenio = readLine()?.trim()?.lowercase() == "s"
+  
+  println("Días de antigüedad del cliente:")
+  val antiguedad = readLine()?.toIntOrNull() ?: 0
+  
+  if (tieneConvenio) {
+      println("Estado: Comercio con beneficios habilitados")
+      if (antiguedad >= 365) {
+          println("-> Aplica para Bono de Aniversario")
+      } else {
+          println("-> No cumple antigüedad para bonos")
       }
-  }else{
-      println("Paciente sin antecedentes cardiacos")
-      if(frecuencia<50 || frecuencia >100){
-          println("Frecuencia fuera del rango normal")
-      }else{
-          println("Frecuencia cardiaca normal")
+  } else {
+      println("Estado: Comercio en plan básico")
+      if (antiguedad > 180 || antiguedad < 0) {
+          println("-> Revisar elegibilidad para upgrade de plan")
+      } else {
+          println("-> Sin ofertas disponibles actualmente")
       }
   }
-
 }
