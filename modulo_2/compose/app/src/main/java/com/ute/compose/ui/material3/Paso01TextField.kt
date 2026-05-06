@@ -1,4 +1,4 @@
-package com.ute.compose.ui.screens
+package com.ute.compose.ui.material3
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -207,6 +207,6 @@ private fun DemoFormularioContacto() {
 
 @Preview(showBackground = true)
 @Composable
-fun Paso01_Preview() {
+fun Paso01Preview() {
     MaterialTheme { Paso01TextFieldScreen() }
 }
