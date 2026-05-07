@@ -25,13 +25,13 @@ class MainActivity : ComponentActivity() {
                 // S05ModifierScreen()
                 // S06EstadoScreen()
                 // S07StateHoistingScreen()
-                 // S08BienvenidaScreen()
+                // S08BienvenidaScreen()
 
                 // Componentes material 3:
                 //Paso01TextFieldScreen()
-                Paso01SumaScreen()
-                // Paso02CardScreen()
-                // Paso03LazyColumnScreen()
+                //Paso01SumaScreen()
+                //Paso02CardScreen()
+                Paso03LazyColumnScreen()
                 // Paso04ScaffoldScreen()
                 // Paso05NavBarScreen()
                 // Paso06DialogosScreen()
