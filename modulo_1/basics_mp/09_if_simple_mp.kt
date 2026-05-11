@@ -1,14 +1,12 @@
 fun main() {
-    println("--- Sistema de Canje Loyaltee ---")
-    print("Ingrese la cantidad de puntos a usar: ")
-    
-    val puntosACanjear = readLine()?.toIntOrNull() ?: 0
-    
-    if (puntosACanjear >= 1000) {
-        println("¡Felicidades! Puedes canjear esto por una Tarjeta de Regalo.")
-    }
-    
-    if (puntosACanjear > 0 && puntosACanjear < 1000) {
-        println("Puntos insuficientes para premios mayores. Prueba con productos seleccionados.")
-    }
+  println("Controles de Flujo - Loyaltee")
+  println("Validacion de puntos del cliente")
+  val puntos =readLine()?:toDoubleOrNull()?: 36.5
+  if(puntos>=100.0){
+      println("Cliente premium: beneficios especiales activados")
+  }
+  if(puntos>=200.0){
+      println("Cliente VIP: acceso a recompensas exclusivas")
+  }
+  println("Puntos registrados: $puntos")
 }

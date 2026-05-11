@@ -1,19 +1,24 @@
+
 fun main() {
-  println("Loyaltee - Segmentación de Clientes")
-  println("Ingrese el volumen de compras anuales ($):")
-  val volumenCompras = readLine()?.toIntOrNull() ?: 0
+  println("Controles de Flujo")
+  println("Condicional If - Multiples condiciones")
+  println("Puntos acumulados del cliente Loyaltee")
+  val puntos = readLine()?.toIntOrNull()?:0
   
-  val categoria = if (volumenCompras <= 100) {
-      "Bronce (Cliente Nuevo)"
-  } else if (volumenCompras < 500) {
-      "Plata (Cliente Frecuente)"
-  } else if (volumenCompras < 1500) {
-      "Oro (Cliente VIP)"
-  } else if (volumenCompras < 5000) {
-      "Platino (Socio Estratégico)"
+  val clasificacion = if(puntos<=100){
+      "Bronce"
+  } else if(puntos<500){
+      "Plata"
+  } else if(puntos<1000){
+      "Oro"
+  } else if(puntos<3000){
+      "Platino"
+  } else if(puntos<5000){
+      "Diamante"
   } else {
-      "Embajador de Marca"
+      "Cliente VIP Loyaltee"
   }
   
-  println("El cliente ha sido clasificado como: $categoria")
+  println("Clasificacion: $clasificacion")
+ 
 }

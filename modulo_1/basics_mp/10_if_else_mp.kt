@@ -1,29 +1,27 @@
 fun main() {
-    println("--- Cálculo de Beneficio para el Comercio ---")
-    
-    print("¿Es una cuenta Business Plus? (s/n): ")
-    val esPlus = readLine()?.trim()?.lowercase() == "s"
-    
-    print("Monto de transacciones mensuales: ")
-    val montoMensual = readLine()?.toDoubleOrNull() ?: 0.0
-    
-    if (esPlus) {
-        val comisionLoyaltee = montoMensual * 0.02 // 2% de comisión
-        println("Comisión reducida Loyaltee Plus: $${"%.2f".format(comisionLoyaltee)}")
-    } else {
-        val comisionEstandar = montoMensual * 0.05 // 5% de comisión
-        println("Comisión Estándar: $${"%.2f".format(comisionEstandar)}")
-    }
+  println("Controles de Flujo - Loyaltee")
+  println("Condicional If - else")
+  println("Cliente afiliado al programa s/n: ")
+  val afiliado =readLine()?.trim()?.lowercase()=="ss"
+  println("Total de compra: ")
+  val totalCompra =readLine()?.toDoubleOrNull()?:0.0
+  if(afiliado){
+      val descuento = totalCompra*0.20
+      println("Descuento aplicado: $${"%.2f".format(descuento)}")
+  } else{
+      println("Pago total: $${"%.2f".format(CostoBase)"})
+  }
 }
 
-// Ejercicio: Clasificación de cupones
+//ejercicio en clase:
 fun main() {
-    println("Tipo de Cupón: ¿Es Físico o Digital? (f/d)")
-    val esDigital = readLine()?.trim()?.lowercase() == "d"
-    
-    if (esDigital) {
-        println("Enviar código QR al correo del cliente.")
-    } else {
-        println("Imprimir ticket de validación para el mostrador.")
-    }
+  println("Controles de Flujo - Loyaltee")
+  println("Condicional If - else")
+  println("Cliente canjea puntos o acumula c/a")
+  val canjea =readLine()?.trim()?.lowercase()=="c"
+  if(canjea){
+      println("Se aplican beneficios del programa")
+  } else{
+      println("Se acumulan puntos en la cuenta")
+  }
 }

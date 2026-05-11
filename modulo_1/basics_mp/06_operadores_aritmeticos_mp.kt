@@ -1,17 +1,48 @@
 fun main() {
-    var puntosBase = 100
-    val multiplicadorPromo = 2
+    println("Operadores Aritméticos - Loyaltee")
+    val puntosCliente1 = 10
+    val puntosCliente2 = 2
+    println("Suma de puntos")
+    println("$puntosCliente1 + $puntosCliente2 : ${puntosCliente1+puntosCliente2}")
+    println("Resta de puntos")
+    println("$puntosCliente1 - $puntosCliente2 : ${puntosCliente1-puntosCliente2}")
+    println("Multiplicacion de puntos")
+    println("$puntosCliente1 * $puntosCliente2 : ${puntosCliente1*puntosCliente2}")
+    println("Division de puntos")
+    println("$puntosCliente1 / $puntosCliente2 : ${puntosCliente1/puntosCliente2}")
+    println("Módulo de puntos")
+    println("$puntosCliente1 % $puntosCliente2 : ${puntosCliente1%puntosCliente2}")
     
-    println("Puntos base: $puntosBase")
     
-    // Operadores de asignación compuesta
-    puntosBase *= multiplicadorPromo // Se duplican por temporada
-    println("Puntos después de promoción x2: $puntosBase")
+    println("Operadores de asignacion compuesta en puntos")
+    var puntos = 10
+    puntos+=5
+    println("puntos +=5 $puntos")
+    puntos-=3
+    println("puntos -=3 $puntos")
+    puntos*=6
+    println("puntos *=3 $puntos")
+    puntos/=2
+    println("puntos /=2 $puntos")
+    puntos%=2
+    println("puntos %=2 $puntos")
+    puntos++ 
+    println("puntos++ $puntos")
+    puntos--
+    println("puntos-- $puntos")
     
-    puntosBase += 10 // Bonus por completar perfil
-    println("Puntos finales: $puntosBase")
-    
-    // Comparaciones
-    val metaPremios = 500
-    println("¿Alcanzó la meta de premios?: ${puntosBase >= metaPremios}")
+    //ejemplo:
+
+    println("Comparacion de clientes Loyaltee")
+
+    var puntosCliente1 = 10
+    var puntosCliente2 = 2
+
+    println("$puntosCliente1 == $puntosCliente2 : ${puntosCliente1 == puntosCliente2}")
+    println("$puntosCliente1 != $puntosCliente2 : ${puntosCliente1 != puntosCliente2}")
+    println("$puntosCliente1 > $puntosCliente2 : ${puntosCliente1 > puntosCliente2}")
+    println("$puntosCliente1 < $puntosCliente2 : ${puntosCliente1 < puntosCliente2}")
+    println("$puntosCliente1 <= $puntosCliente2 : ${puntosCliente1 <= puntosCliente2}")
+    println("$puntosCliente1 >= $puntosCliente2 : ${puntosCliente1 >= puntosCliente2}")
+
 }

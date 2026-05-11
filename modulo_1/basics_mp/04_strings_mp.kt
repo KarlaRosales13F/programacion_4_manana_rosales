@@ -1,16 +1,22 @@
 fun main() {
-    val cliente = "Andrés"
-    val nivel = "Oro"
-    val puntos = 450
+    val nombre= "Cliente"
+    val apellido= "Frecuente"
+    val edad= 28
+    //variable simple
+    println("Hola $nombre, bienvenido a Loyaltee")
+    //Expresion
+    println("Cliente Loyaltee :${nombre.uppercase()} ${apellido.uppercase()}")
+    val nombreCompleto = "Cliente Loyaltee :${nombre.uppercase()} ${apellido.uppercase()}"
+    println("Edad en el programa : ${edad+6} años")
     
-    // Plantilla de mensaje con String Multilínea
-    val mensajeBienvenida = """
-        |*** NOTIFICACIÓN LOYALTEE ***
-        |Hola, ${cliente.uppercase()}!
-        |Tu nivel actual es: $nivel
-        |Puntos para canjear: $puntos
-        |Estado de cuenta: ${if(puntos >= 500) "¡Tienes premios listos!" else "Te faltan ${500 - puntos} para tu próximo regalo"}
-    """.trimMargin()
+    //String Multilinea
     
-    println(mensajeBienvenida)
+    val tarjeta = """
+    	|Cliente: $nombre $apellido
+        |Años en Loyaltee: $edad
+        |Acceso a beneficios: ${if(edad>018) "Permitido" else "Denegado"}
+        
+   """.trimMargin()
+   println(tarjeta)
+   
 }
