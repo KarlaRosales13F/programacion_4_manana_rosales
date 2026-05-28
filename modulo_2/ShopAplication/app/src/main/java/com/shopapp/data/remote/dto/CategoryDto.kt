@@ -1,4 +1,3 @@
-package com.shopapp.data.remote.dto
 
 // data/remote/dto/CategoryDto.kt
 package com.shopapp.data.remote.dto

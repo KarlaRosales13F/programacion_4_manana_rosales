@@ -1,5 +1,3 @@
-package com.shopapp.data.remote.interceptor
-
 // data/remote/interceptor/AuthInterceptor.kt
 package com.shopapp.data.remote.interceptor
 
