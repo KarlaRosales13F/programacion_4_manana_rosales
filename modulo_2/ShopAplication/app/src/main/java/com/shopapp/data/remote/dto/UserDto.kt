@@ -1,4 +1,3 @@
-
 // data/remote/dto/UserDto.kt
 package com.shopapp.data.remote.dto
 

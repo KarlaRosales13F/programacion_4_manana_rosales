@@ -1,3 +1,5 @@
+// data/remote/api/UserApi.kt
+package com.shopapp.data.remote.api
 
 import com.shopapp.data.remote.dto.*
 import retrofit2.Response

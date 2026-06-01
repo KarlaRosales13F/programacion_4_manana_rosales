@@ -1,4 +1,5 @@
-package com.shopapp.domain.repository
+// data/repository/AuthRepositoryImpl.kt
+package com.shopapp.data.repository
 
 import com.shopapp.data.local.TokenDataStore
 import com.shopapp.data.remote.api.AuthApi
