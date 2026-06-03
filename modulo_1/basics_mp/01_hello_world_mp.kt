@@ -1,3 +1,3 @@
 fun main() {
-    println("¡Bienvenido a Loyaltee! El programa de fidelización diseñado para tus clientes.")
+    println("¡Bienvenido a Loyalty! El programa de fidelización diseñado para tus clientes.")
 }

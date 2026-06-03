@@ -1,14 +1,25 @@
 fun main() {
 
     //Readline
-    println("Escribe tu nombre para Loyaltee")
+    println("Escribe tu nombre para Loyalty")
     val nombre= readLine()
-    println("Nombre registrado en Loyaltee : $nombre") 
+    println("Nombre registrado en Loyalty : $nombre") 
     
     println("Escribe Apellido: ")
-    val pellido= readLine() ?: "Cliente anónimo"
-    println("Apellido registrado : $apellido")
-
+    val apellido= readLine() ?: "Cliente frecuente"
+    println("Apellido registrado en Loyalty : $apellido")
     
+    /*
+    Comentarios multilinea
+    */
+    
+    //comentario de una sola linea
+    
+    /**
+    *multilineas
+    *comentarios
+    *@param nombre del cliente Loyalty
+    *@return un registro personalizado
+    */
     
 }

@@ -1,6 +1,6 @@
 fun main() {
     //no mutable
-    val nombre="Cliente Loyaltee"
+    val nombre="Cliente Loyalty"
     val edad: Int= 28
     val pi=3.14159
     
