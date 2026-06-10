@@ -55,7 +55,6 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     implementation("androidx.compose.material:material-icons-extended")
 
-
     val cameraxVersion = "1.4.1"
     implementation("androidx.camera:camera-core:$cameraxVersion")
     implementation("androidx.camera:camera-camera2:$cameraxVersion")
@@ -70,4 +69,19 @@ dependencies {
 
     // Coil para mostrar imágenes
     implementation("io.coil-kt:coil-compose:2.7.0")
+
+    // build.gradle.kts
+    dependencies {
+        // Ubicación
+        implementation("com.google.android.gms:play-services-location:21.3.0")
+
+        // Soporte de coroutines para Tasks de Play Services — necesario para .await() en lastLocation
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.8.1")
+
+        // viewModel() composable — necesario para UbicacionViewModel y SensoresViewModel en Compose
+        implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7")
+
+        // Google Maps Compose (para visualizar la ubicación)
+        implementation("com.google.maps.android:maps-compose:6.2.0")
+    }
 }
