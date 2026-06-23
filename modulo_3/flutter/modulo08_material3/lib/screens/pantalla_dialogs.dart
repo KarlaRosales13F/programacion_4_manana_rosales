@@ -7,19 +7,36 @@ class PantallaDialogs extends StatelessWidget {
   void _mostrarSnackBar(BuildContext context, {bool esError = false}) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text(esError
-            ? 'Error: no se pudo conectar al servidor'
-            : 'Conexión SSH establecida correctamente'),
-        backgroundColor: esError
-            ? Theme.of(context).colorScheme.error
-            : null,
+        content: Text(
+          esError
+              ? 'Error: no se pudo conectar al servidor'
+              : 'Conexión SSH establecida correctamente',
+        ),
+        backgroundColor:
+            esError ? Theme.of(context).colorScheme.error : null,
         action: SnackBarAction(
-          label:    'Deshacer',
+          label: 'Deshacer',
           onPressed: () {},
         ),
-        behavior:  SnackBarBehavior.floating,
-        shape:     RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-        duration:  const Duration(seconds: 3),
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
+        duration: const Duration(seconds: 3),
+      ),
+    );
+  }
+
+  void _mostrarSnackBarAdvertencia(BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: const Text('Advertencia: probando SnackBar de advertencia'),
+        backgroundColor: Colors.orange,
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
+        duration: const Duration(seconds: 3),
       ),
     );
   }
@@ -28,8 +45,11 @@ class PantallaDialogs extends StatelessWidget {
     final confirmar = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
-        icon:    const Icon(Icons.warning_amber, color: Colors.orange),
-        title:   const Text('Eliminar servidor'),
+        icon: const Icon(
+          Icons.warning_amber,
+          color: Colors.orange,
+        ),
+        title: const Text('Eliminar servidor'),
         content: const Text(
           '¿Estás seguro de que deseas eliminar prod-web-01?\n'
           'Esta acción no se puede deshacer.',
@@ -37,7 +57,7 @@ class PantallaDialogs extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
-            child:     const Text('Cancelar'),
+            child: const Text('Cancelar'),
           ),
           FilledButton(
             style: FilledButton.styleFrom(
@@ -50,12 +70,13 @@ class PantallaDialogs extends StatelessWidget {
       ),
     );
 
-    // Verificar que el widget sigue montado antes de usar el contexto
     if (!context.mounted) return;
 
     if (confirmar == true) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Servidor eliminado correctamente')),
+        const SnackBar(
+          content: Text('Servidor eliminado correctamente'),
+        ),
       );
     }
   }
@@ -63,7 +84,7 @@ class PantallaDialogs extends StatelessWidget {
   Future<void> _mostrarFormulario(BuildContext context) async {
     final formKey = GlobalKey<FormState>();
     final ctrlNombre = TextEditingController();
-    final ctrlIp     = TextEditingController();
+    final ctrlIp = TextEditingController();
 
     await showDialog<void>(
       context: context,
@@ -75,18 +96,30 @@ class PantallaDialogs extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               TextFormField(
-                controller:  ctrlNombre,
-                decoration:  const InputDecoration(labelText: 'Nombre'),
-                validator:   (v) => v == null || v.isEmpty ? 'Campo requerido' : null,
+                controller: ctrlNombre,
+                decoration: const InputDecoration(
+                  labelText: 'Nombre',
+                ),
+                validator: (v) =>
+                    v == null || v.isEmpty ? 'Campo requerido' : null,
               ),
               const SizedBox(height: 8),
               TextFormField(
                 controller: ctrlIp,
-                decoration: const InputDecoration(labelText: 'Dirección IP'),
-                validator:  (v) {
-                  if (v == null || v.isEmpty) return 'Campo requerido';
+                decoration: const InputDecoration(
+                  labelText: 'Dirección IP',
+                ),
+                validator: (v) {
+                  if (v == null || v.isEmpty) {
+                    return 'Campo requerido';
+                  }
+
                   final partes = v.split('.');
-                  if (partes.length != 4) return 'Formato: 192.168.1.1';
+
+                  if (partes.length != 4) {
+                    return 'Formato: 192.168.1.1';
+                  }
+
                   return null;
                 },
               ),
@@ -96,7 +129,7 @@ class PantallaDialogs extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
-            child:     const Text('Cancelar'),
+            child: const Text('Cancelar'),
           ),
           FilledButton(
             onPressed: () {
@@ -111,64 +144,134 @@ class PantallaDialogs extends StatelessWidget {
     );
 
     if (!context.mounted) return;
+
     if (ctrlNombre.text.isNotEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Servidor "${ctrlNombre.text}" agregado')),
+        SnackBar(
+          content: Text(
+            'Servidor "${ctrlNombre.text}" agregado',
+          ),
+        ),
       );
     }
   }
 
+  Future<void> _mostrarInformacion(BuildContext context) async {
+    await showDialog<void>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        icon: const Icon(
+          Icons.info_outline,
+          color: Colors.blue,
+        ),
+        title: const Text('Información'),
+        content: const Text(
+          'El servidor está funcionando correctamente y no presenta alertas.',
+        ),
+        actions: [
+          FilledButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('Aceptar'),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    final cs   = Theme.of(context).colorScheme;
+    final cs = Theme.of(context).colorScheme;
     final text = Theme.of(context).textTheme;
 
     return Scaffold(
       appBar: AppBar(
-        title:           const Text('SnackBar y Dialog'),
+        title: const Text('SnackBar y Dialog'),
         backgroundColor: cs.surfaceContainerHighest,
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-
-          // ── SnackBar ──────────────────────────────────────────────
-          Text('SnackBar', style: text.labelLarge?.copyWith(color: cs.primary)),
+          Text(
+            'SnackBar',
+            style: text.labelLarge?.copyWith(
+              color: cs.primary,
+            ),
+          ),
           const SizedBox(height: 12),
+
           FilledButton.icon(
             onPressed: () => _mostrarSnackBar(context),
-            icon:  const Icon(Icons.check_circle_outline),
+            icon: const Icon(Icons.check_circle_outline),
             label: const Text('SnackBar de éxito'),
           ),
+
           const SizedBox(height: 8),
+
           FilledButton.icon(
             style: FilledButton.styleFrom(
               backgroundColor: cs.error,
               foregroundColor: cs.onError,
             ),
-            onPressed: () => _mostrarSnackBar(context, esError: true),
-            icon:  const Icon(Icons.error_outline),
+            onPressed: () =>
+                _mostrarSnackBar(context, esError: true),
+            icon: const Icon(Icons.error_outline),
             label: const Text('SnackBar de error'),
+          ),
+
+          const SizedBox(height: 8),
+
+          FilledButton.icon(
+            style: FilledButton.styleFrom(
+              backgroundColor: Colors.orange,
+              foregroundColor: Colors.white,
+            ),
+            onPressed: () =>
+                _mostrarSnackBarAdvertencia(context),
+            icon: const Icon(Icons.warning_amber_outlined),
+            label: const Text('SnackBar de advertencia'),
           ),
 
           const Divider(height: 32),
 
-          // ── AlertDialog ───────────────────────────────────────────
-          Text('AlertDialog', style: text.labelLarge?.copyWith(color: cs.primary)),
+          Text(
+            'AlertDialog',
+            style: text.labelLarge?.copyWith(
+              color: cs.primary,
+            ),
+          ),
+
           const SizedBox(height: 12),
+
           OutlinedButton.icon(
             style: OutlinedButton.styleFrom(
               foregroundColor: cs.error,
               side: BorderSide(color: cs.error),
             ),
-            onPressed: () => _mostrarConfirmacion(context),
-            icon:  const Icon(Icons.delete_outline),
-            label: const Text('Eliminar servidor (confirmación)'),
+            onPressed: () =>
+                _mostrarConfirmacion(context),
+            icon: const Icon(Icons.delete_outline),
+            label: const Text(
+              'Eliminar servidor (confirmación)',
+            ),
           ),
+
           const SizedBox(height: 8),
+
           FilledButton.tonal(
-            onPressed: () => _mostrarFormulario(context),
-            child: const Text('Agregar servidor (formulario)'),
+            onPressed: () =>
+                _mostrarFormulario(context),
+            child: const Text(
+              'Agregar servidor (formulario)',
+            ),
+          ),
+
+          const SizedBox(height: 8),
+
+          FilledButton.icon(
+            onPressed: () =>
+                _mostrarInformacion(context),
+            icon: const Icon(Icons.info_outline),
+            label: const Text('Mostrar información'),
           ),
         ],
       ),

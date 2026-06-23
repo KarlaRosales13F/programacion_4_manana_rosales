@@ -15,7 +15,7 @@ import 'screens/pantalla_dialogs.dart';
 // │  5  Paso 5  NavigationBar con 4 pestañas                        │
 // │  6  Paso 6  SnackBar y AlertDialog                              │
 // └──────────────────────────────────────────────────────────────────┘
-const int paso = 2;
+const int paso = 6;
 
 void main() => runApp(const AppMonitoreo());
 
@@ -55,7 +55,7 @@ class _AppMonitoreoState extends State<AppMonitoreo> {
         4 => const CatalogoBotones(),
         5 => const PantallaNavegacion(),
         6 => const PantallaDialogs(),
-        _ => Scaffold(body: Center(child: Text('Paso $paso no definido'))),
+        _=> Scaffold(body: Center(child: Text('Paso $paso no definido'))),
       },
     );
   }

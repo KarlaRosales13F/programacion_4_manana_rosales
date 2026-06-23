@@ -78,7 +78,7 @@ class CatalogoBotones extends StatelessWidget {
               style: text.labelLarge?.copyWith(color: cs.primary)),
           const SizedBox(height: 12),
           FilledButton(
-            onPressed: null,               // null = deshabilitado
+            onPressed: null,               //null = deshabilitado
             child: const Text('No disponible'),
           ),
           const SizedBox(height: 8),
