@@ -3,15 +3,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_shop_app/presentation/widgets/restock_dialog.dart';
+import 'package:flutter_shop_app/data/repository/category_repository_impl.dart';
+import 'package:flutter_shop_app/presentation/providers/products_admin_provider.dart';
 import '../../../theme/app_colors.dart';
 import '../../../core/utils/formatters.dart';
-import '../../../data/repository/category_repository_impl.dart';
 import '../../../domain/model/category.dart';
 import '../../../domain/model/product.dart';
-import '../../providers/products_admin_provider.dart';
 import '../../widgets/product_form.dart';
-
+import '../../widgets/restock_dialog.dart';
 
 class ProductsAdminScreen extends ConsumerStatefulWidget {
   const ProductsAdminScreen({super.key});
