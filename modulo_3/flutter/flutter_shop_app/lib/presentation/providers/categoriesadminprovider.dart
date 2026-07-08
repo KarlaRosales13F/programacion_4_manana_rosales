@@ -99,7 +99,7 @@ class CategoriesAdminNotifier extends StateNotifier<CategoriesAdminState> {
       final created = await _datasource.createCategory(payload);
       state = state.copyWith(
         categories: [created, ...state.categories],
-        formState:  const CategoryFormSuccess('Categoría creada'),
+        formState:  const CategoryFormSuccess('Categoría Rosales creada con éxito'),
       );
     } catch (e) {
       state = state.copyWith(
@@ -114,7 +114,7 @@ class CategoriesAdminNotifier extends StateNotifier<CategoriesAdminState> {
       final updated = await _datasource.updateCategory(id, payload);
       state = state.copyWith(
         categories: state.categories.map((c) => c.id == id ? updated : c).toList(),
-        formState:  const CategoryFormSuccess('Categoría actualizada'),
+        formState:  const CategoryFormSuccess('Categoría Rosales actualizada con éxito'),
       );
     } catch (e) {
       state = state.copyWith(

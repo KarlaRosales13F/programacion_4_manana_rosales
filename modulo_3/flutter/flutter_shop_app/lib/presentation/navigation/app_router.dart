@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_shop_app/presentation/screens/admin/categoriesadminscreen.dart';
 import 'package:flutter_shop_app/presentation/screens/admin/dashboard_screen.dart';
+import 'package:flutter_shop_app/presentation/screens/admin/products_admin_screen.dart';
 import 'package:flutter_shop_app/presentation/screens/auth/profile_screen.dart';
 import 'package:flutter_shop_app/presentation/screens/cart/cart_screen.dart';
 import 'package:flutter_shop_app/presentation/screens/catalog/product_detail_screen.dart';
@@ -19,6 +20,7 @@ import '../screens/catalog/catalog_screen.dart';
 import '../screens/catalog/home_screen.dart';
 import 'public_shell.dart';
 
+// ignore: unused_element
 class _PlaceholderScreen extends ConsumerWidget {
   final String title;
   const _PlaceholderScreen(this.title);
@@ -41,8 +43,7 @@ class _PlaceholderScreen extends ConsumerWidget {
         ],
       ),
       body: Center(
-        child: Text(title,
-            style: const TextStyle(color: Color(0xFF8888AA), fontSize: 16)),
+        child: Text(title, style: const TextStyle(color: Color(0xFF8888AA), fontSize: 16)),
       ),
     );
   }
@@ -53,34 +54,31 @@ final routerProvider = Provider<GoRouter>((ref) {
     initialLocation: '/',
     refreshListenable: _AuthStateListenable(ref),
     redirect: (context, state) {
-      final auth = ref.read(authProvider);
+      final auth     = ref.read(authProvider);
       final location = state.matchedLocation;
 
-      if (auth.isChecking) return null;
+      if (auth.isChecking)        return null;
 
       final isAuthRoute = location == '/login' || location == '/register';
 
       if (!auth.isAuthenticated && !isAuthRoute) return '/login';
-      if (auth.isAuthenticated && isAuthRoute)
-        return auth.isStaff ? '/admin' : '/';
-      if (auth.isAuthenticated &&
-          !auth.isStaff &&
-          location.startsWith('/admin')) return '/';
+      if ( auth.isAuthenticated &&  isAuthRoute) return auth.isStaff ? '/admin' : '/';
+      if ( auth.isAuthenticated && !auth.isStaff && location.startsWith('/admin')) return '/';
 
       return null;
     },
     routes: [
       // ── Auth ──────────────────────────────────────────────
-      GoRoute(path: '/login', builder: (_, __) => const LoginScreen()),
+      GoRoute(path: '/login',    builder: (_, __) => const LoginScreen()),
       GoRoute(path: '/register', builder: (_, __) => const RegisterScreen()),
 
       // ── Zona pública con BottomNavBar ──────────────────────
       ShellRoute(
         builder: (_, __, child) => PublicShell(child: child),
         routes: [
-          GoRoute(path: '/', builder: (_, __) => const HomeScreen()),
+          GoRoute(path: '/',        builder: (_, __) => const HomeScreen()),
           GoRoute(
-            path: '/catalog',
+            path: '/catalog', 
             builder: (_, __) => const CatalogScreen(),
             routes: [
               GoRoute(
@@ -96,9 +94,6 @@ final routerProvider = Provider<GoRouter>((ref) {
             path: '/cart',
             builder: (_, __) => const CartScreen(),
           ),
-          GoRoute(
-              path: '/cart',
-              builder: (_, __) => const _PlaceholderScreen('Carrito — M5')),
           GoRoute(
             path: '/orders',
             builder: (_, __) => const OrdersScreen(),
@@ -120,51 +115,52 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/admin',
         builder: (_, state) => AdminShell(
-          title: 'Dashboard',
+          title:        'Dashboard',
           currentRoute: state.matchedLocation,
-          child: const DashboardScreen(),
+          child:        const DashboardScreen(),
         ),
       ),
-      
       GoRoute(
         path: '/admin/categories',
         builder: (_, state) => AdminShell(
-          title: 'Categorías',
+          title:        'Categorías',
           currentRoute: state.matchedLocation,
-          child: const CategoriesAdminScreen(),
+          child:        const CategoriesAdminScreen(),
         ),
       ),
+
+      
       GoRoute(
         path: '/admin/products',
         builder: (_, state) => AdminShell(
-          title: 'Productos',
+          title:        'Productos',
           currentRoute: state.matchedLocation,
-          child: const _AdminPlaceholder('Productos — M9'),
+          child:        const ProductsAdminScreen(),
         ),
       ),
       GoRoute(
         path: '/admin/orders',
         builder: (_, state) => AdminShell(
-          title: 'Pedidos',
+          title:        'Pedidos',
           currentRoute: state.matchedLocation,
-          child: const _AdminPlaceholder('Pedidos admin — M10'),
+          child:        const _AdminPlaceholder('Pedidos admin — M10'),
         ),
       ),
       GoRoute(
         path: '/admin/orders/:id',
         builder: (_, state) => AdminShell(
-          title: 'Detalle pedido',
+          title:        'Detalle pedido',
           currentRoute: '/admin/orders',
-          child:
-              _AdminPlaceholder('Pedido #${state.pathParameters['id']} — M10'),
+          child:        _AdminPlaceholder(
+              'Pedido #${state.pathParameters['id']} — M10'),
         ),
       ),
       GoRoute(
         path: '/admin/users',
         builder: (_, state) => AdminShell(
-          title: 'Usuarios',
+          title:        'Usuarios',
           currentRoute: state.matchedLocation,
-          child: const _AdminPlaceholder('Usuarios — M11'),
+          child:        const _AdminPlaceholder('Usuarios — M11'),
         ),
       ),
     ],

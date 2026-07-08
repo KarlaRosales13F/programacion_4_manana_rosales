@@ -5,7 +5,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_shop_app/presentation/providers/categoriesadminprovider.dart';
 import '../../../theme/app_colors.dart';
 import '../../../domain/model/category.dart';
-import '../../providers/categoriesadminprovider.dart';
 import '../../widgets/category_form.dart';
 
 class CategoriesAdminScreen extends ConsumerWidget {
@@ -30,22 +29,22 @@ class CategoriesAdminScreen extends ConsumerWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text('Categorías',
+                      const Text('Categorías Rosales',
                           style: TextStyle(
                             color: AppColors.textPrimary,
                             fontSize: 22, fontWeight: FontWeight.bold,
                           )),
                       Text(
-                        '${state.categories.length} categorías',
+                        '${state.categories.length} ítems registrados',
                         style: const TextStyle(color: AppColors.textSecondary, fontSize: 13),
                       ),
                     ],
                   ),
                   ElevatedButton.icon(
                     onPressed: () => showCategoryForm(context, ref),
-                    icon:      const Icon(Icons.add, size: 18),
-                    label:     const Text('Nueva'),
-                    style:     ElevatedButton.styleFrom(
+                    icon:       const Icon(Icons.add, size: 18),
+                    label:      const Text('Nueva Rosales'),
+                    style:      ElevatedButton.styleFrom(
                       minimumSize:   const Size(0, 40),
                       padding:       const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
                     ),
@@ -56,7 +55,7 @@ class CategoriesAdminScreen extends ConsumerWidget {
               TextField(
                 onChanged:  ref.read(categoriesAdminProvider.notifier).setSearch,
                 decoration: const InputDecoration(
-                  hintText:   'Buscar categoría...',
+                  hintText:   'Buscar categoría Rosales...',
                   prefixIcon: Icon(Icons.search_rounded, color: AppColors.textSecondary),
                   contentPadding: EdgeInsets.symmetric(vertical: 10),
                 ),
@@ -100,7 +99,7 @@ class CategoriesAdminScreen extends ConsumerWidget {
                     const Text('🏷️', style: TextStyle(fontSize: 48)),
                     const SizedBox(height: 12),
                     Text(
-                      state.search.isEmpty ? 'Sin categorías' : 'Sin resultados',
+                      state.search.isEmpty ? 'Sin categorías Rosales' : 'Sin resultados',
                       style: const TextStyle(
                         color: AppColors.textPrimary, fontSize: 18, fontWeight: FontWeight.bold,
                       ),
@@ -136,13 +135,13 @@ class CategoriesAdminScreen extends ConsumerWidget {
         backgroundColor: AppColors.surface,
         shape:           RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         title: Text(
-          hasProducts ? '¿Desactivar categoría?' : '¿Eliminar categoría?',
+          hasProducts ? '¿Desactivar categoría?' : '¿Eliminar categoría permanentemente?',
           style: const TextStyle(color: AppColors.textPrimary),
         ),
         content: Text(
           hasProducts
-              ? '"${cat.name}" tiene ${cat.totalProducts} producto(s). Se desactivará en lugar de eliminarse.'
-              : '"${cat.name}" se eliminará permanentemente.',
+              ? '"${cat.name}" posee ${cat.totalProducts} producto(s) enlazados. Se pasará a estado inactivo.'
+              : '"${cat.name}" se removerá del sistema de forma definitiva.',
           style: const TextStyle(color: AppColors.textSecondary),
         ),
         actions: [
