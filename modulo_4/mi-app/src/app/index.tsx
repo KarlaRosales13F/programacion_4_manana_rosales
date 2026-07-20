@@ -141,17 +141,17 @@ interface BadgeEstadoProps {
 }
 
 const COLOR_ESTADO: Record<EstadoServidor, { fondo: string; texto: string }> = {
-  activo:    { fondo: '#e8f5e9', texto: '#2e7d32' },
+  activo: { fondo: '#e8f5e9', texto: '#2e7d32' },
   degradado: { fondo: '#fff8e1', texto: '#f57f17' },
-  inactivo:  { fondo: '#f5f5f5', texto: '#616161' },
-  error:     { fondo: '#fce4ec', texto: '#c62828' },
+  inactivo: { fondo: '#f5f5f5', texto: '#616161' },
+  error: { fondo: '#fce4ec', texto: '#c62828' },
 }
 
 const ICONO_ESTADO: Record<EstadoServidor, string> = {
-  activo:    '●',
+  activo: '●',
   degradado: '◐',
-  inactivo:  '○',
-  error:     '✕',
+  inactivo: '○',
+  error: '✕',
 }
 
 function BadgeEstado({
@@ -201,28 +201,28 @@ function Paso3() {
   return (
     <View style={estilos3.fondo}>
       <Text style={estilos3.titulo}>Estado de la red</Text>
-      <FilaServidor nombre="web-01"      ip="10.0.2.10" estado="activo"    latencia={8}   />
-      <FilaServidor nombre="db-primary"  ip="10.0.2.20" estado="activo"    latencia={2}   />
-      <FilaServidor nombre="cache-01"    ip="10.0.2.30" estado="degradado" latencia={340} />
-      <FilaServidor nombre="worker-03"   ip="10.0.2.41" estado="error"                    />
-      <FilaServidor nombre="backup-01"   ip="10.0.2.50" estado="inactivo"                 />
+      <FilaServidor nombre="web-01" ip="10.0.2.10" estado="activo" latencia={8} />
+      <FilaServidor nombre="db-primary" ip="10.0.2.20" estado="activo" latencia={2} />
+      <FilaServidor nombre="cache-01" ip="10.0.2.30" estado="degradado" latencia={340} />
+      <FilaServidor nombre="worker-03" ip="10.0.2.41" estado="error" />
+      <FilaServidor nombre="backup-01" ip="10.0.2.50" estado="inactivo" />
     </View>
   )
 }
 
 const SERVIDORES_DEMO = [
-  { id: '1',  nombre: 'web-01',       ip: '10.0.2.10', os: 'Ubuntu 24.04',  cpu: 48, ram: 62 },
-  { id: '2',  nombre: 'web-02',       ip: '10.0.2.11', os: 'Ubuntu 24.04',  cpu: 51, ram: 58 },
-  { id: '3',  nombre: 'db-primary',   ip: '10.0.2.20', os: 'Debian 12',     cpu: 12, ram: 74 },
-  { id: '4',  nombre: 'db-replica',   ip: '10.0.2.21', os: 'Debian 12',     cpu: 8,  ram: 71 },
-  { id: '5',  nombre: 'cache-01',     ip: '10.0.2.30', os: 'Alpine 3.19',   cpu: 4,  ram: 18 },
-  { id: '6',  nombre: 'worker-01',    ip: '10.0.2.40', os: 'Ubuntu 22.04',  cpu: 89, ram: 45 },
-  { id: '7',  nombre: 'worker-02',    ip: '10.0.2.41', os: 'Ubuntu 22.04',  cpu: 92, ram: 47 },
-  { id: '8',  nombre: 'worker-03',    ip: '10.0.2.42', os: 'Ubuntu 22.04',  cpu: 3,  ram: 12 },
-  { id: '9',  nombre: 'lb-01',        ip: '10.0.2.5',  os: 'Alpine 3.19',   cpu: 6,  ram: 9  },
-  { id: '10', nombre: 'monitor-01',   ip: '10.0.2.60', os: 'Rocky Linux 9', cpu: 22, ram: 38 },
-  { id: '11', nombre: 'backup-01',    ip: '10.0.2.50', os: 'Debian 12',     cpu: 2,  ram: 21 },
-  { id: '12', nombre: 'git-server',   ip: '10.0.2.70', os: 'Ubuntu 22.04',  cpu: 15, ram: 33 },
+  { id: '1', nombre: 'web-01', ip: '10.0.2.10', os: 'Ubuntu 24.04', cpu: 48, ram: 62 },
+  { id: '2', nombre: 'web-02', ip: '10.0.2.11', os: 'Ubuntu 24.04', cpu: 51, ram: 58 },
+  { id: '3', nombre: 'db-primary', ip: '10.0.2.20', os: 'Debian 12', cpu: 12, ram: 74 },
+  { id: '4', nombre: 'db-replica', ip: '10.0.2.21', os: 'Debian 12', cpu: 8, ram: 71 },
+  { id: '5', nombre: 'cache-01', ip: '10.0.2.30', os: 'Alpine 3.19', cpu: 4, ram: 18 },
+  { id: '6', nombre: 'worker-01', ip: '10.0.2.40', os: 'Ubuntu 22.04', cpu: 89, ram: 45 },
+  { id: '7', nombre: 'worker-02', ip: '10.0.2.41', os: 'Ubuntu 22.04', cpu: 92, ram: 47 },
+  { id: '8', nombre: 'worker-03', ip: '10.0.2.42', os: 'Ubuntu 22.04', cpu: 3, ram: 12 },
+  { id: '9', nombre: 'lb-01', ip: '10.0.2.5', os: 'Alpine 3.19', cpu: 6, ram: 9 },
+  { id: '10', nombre: 'monitor-01', ip: '10.0.2.60', os: 'Rocky Linux 9', cpu: 22, ram: 38 },
+  { id: '11', nombre: 'backup-01', ip: '10.0.2.50', os: 'Debian 12', cpu: 2, ram: 21 },
+  { id: '12', nombre: 'git-server', ip: '10.0.2.70', os: 'Ubuntu 22.04', cpu: 15, ram: 33 },
 ]
 
 interface BarraUsoProps {
@@ -232,8 +232,8 @@ interface BarraUsoProps {
 
 function BarraUso({ porcentaje, etiqueta }: BarraUsoProps) {
   const color = porcentaje > 85 ? '#c62828'
-              : porcentaje > 60 ? '#f57f17'
-              : '#2e7d32'
+    : porcentaje > 60 ? '#f57f17'
+      : '#2e7d32'
   return (
     <View style={estilos4.barraFila}>
       <Text style={estilos4.barraEtiqueta}>{etiqueta}</Text>
@@ -306,7 +306,7 @@ function ModalConfirm({
       onRequestClose={onCancelar}
     >
       <Pressable style={estilos5.fondo} onPress={onCancelar}>
-        <Pressable style={estilos5.dialogo} onPress={() => {}}>
+        <Pressable style={estilos5.dialogo} onPress={() => { }}>
           <Text style={estilos5.dialogoTitulo}>{titulo}</Text>
           <Text style={estilos5.dialogoMensaje}>{mensaje}</Text>
           <View style={estilos5.botones}>
@@ -596,7 +596,7 @@ const estilos2 = StyleSheet.create({
     color: '#1a1a1a',
     fontFamily: 'monospace',
   },
-  
+
 })
 
 
