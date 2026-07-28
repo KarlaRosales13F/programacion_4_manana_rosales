@@ -1,0 +1,149 @@
+[  +61 ms] executing: uname -m
+[   +5 ms] Exit code 0 from: uname -m
+[        ] x86_64
+[  +11 ms] Artifact Instance of 'MaterialFonts' is not required, skipping update.
+[        ] Artifact Instance of 'GradleWrapper' is not required, skipping update.
+[        ] Artifact Instance of 'AndroidGenSnapshotArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'AndroidInternalBuildArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'IOSEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterWebSdk' is not required, skipping update.
+[        ] Artifact Instance of 'LegacyCanvasKitRemover' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterSdk' is not required, skipping update.
+[        ] Artifact Instance of 'WindowsEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'MacOSEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'LinuxEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'LinuxFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'MacOSFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterRunnerSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterRunnerDebugSymbols' is not required, skipping update.
+[        ] Artifact Instance of 'IosUsbArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'IosUsbArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'IosUsbArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'IosUsbArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'IosUsbArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'IosUsbArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FontSubsetArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'PubDependencies' is not required, skipping update.
+[   +1 ms] executing: [/opt/flutter/] git -c log.showSignature=false log HEAD -n 1 --pretty=format:%ad --date=iso
+[   +9 ms] Exit code 0 from: git -c log.showSignature=false log HEAD -n 1 --pretty=format:%ad --date=iso
+[        ] 2026-03-25 16:21:00 -0700
+[  +36 ms] Artifact Instance of 'AndroidGenSnapshotArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'AndroidInternalBuildArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'IOSEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterWebSdk' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterEngineStamp' is not required, skipping update.
+[        ] Artifact Instance of 'LegacyCanvasKitRemover' is not required, skipping update.
+[   +2 ms] Artifact Instance of 'WindowsEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'MacOSEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'LinuxEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'LinuxFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'MacOSFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterRunnerSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterRunnerDebugSymbols' is not required, skipping update.
+[  +33 ms] executing: /home/alumnos/Android/Sdk/platform-tools/adb devices -l
+[  +38 ms] List of devices attached
+           emulator-5554          device product:sdk_gphone_x86_64 model:Android_SDK_built_for_x86_64 device:generic_x86_64 transport_id:1
+[  +11 ms] /home/alumnos/Android/Sdk/platform-tools/adb -s emulator-5554 shell getprop
+[  +31 ms] Artifact Instance of 'AndroidInternalBuildArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'IOSEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterEngineStamp' is not required, skipping update.
+[   +2 ms] Artifact Instance of 'WindowsEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'MacOSEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'LinuxFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'MacOSFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterRunnerSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterRunnerDebugSymbols' is not required, skipping update.
+[  +92 ms] Skipping pub get: version match.
+[ +114 ms] Skipping generating web_plugin_registrant.dart because it is up-to-date.
+[  +31 ms] Generating /home/karla_rosalesc/Documents/rosales_karla/programacion_IV/programacion_4_manana_rosales/modulo_3/flutter/modulo06_widgets/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
+[   +6 ms] Skipping generating GeneratedPluginRegistrant.java because it is up-to-date.
+[   +6 ms] Skipping generating generated_plugin_registrant.h because it is up-to-date.
+[   +2 ms] Skipping generating generated_plugin_registrant.cc because it is up-to-date.
+[   +3 ms] Skipping generating generated_plugins.cmake because it is up-to-date.
+[   +2 ms] Skipping generating generated_plugin_registrant.h because it is up-to-date.
+[   +1 ms] Skipping generating generated_plugin_registrant.cc because it is up-to-date.
+[   +1 ms] Skipping generating generated_plugins.cmake because it is up-to-date.
+[   +3 ms] Skipping generating GeneratedPluginRegistrant.h because it is up-to-date.
+[   +1 ms] Skipping generating GeneratedPluginRegistrant.m because it is up-to-date.
+[   +1 ms] Skipping generating GeneratedPluginRegistrant.swift because it is up-to-date.
+[  +31 ms] ro.hardware = ranchu
+[  +56 ms] Initializing file store
+[  +13 ms] Skipping target: gen_localizations
+[   +3 ms] gen_dart_plugin_registrant: Starting due to {InvalidatedReasonKind.inputChanged: The following inputs have updated contents: /home/karla_rosalesc/Documents/rosales_karla/programacion_IV/programacion_4_manana_rosales/modulo_3/flutter/modulo06_widgets/.dart_tool/package_config.json}
+[  +30 ms] gen_dart_plugin_registrant: Complete
+[   +2 ms] _composite: Starting due to {}
+[        ] _composite: Complete
+[   +1 ms] complete
+[   +4 ms] Launching lib/main.dart on Android SDK built for x86 64 in debug mode...
+[   +3 ms] /opt/flutter/bin/cache/dart-sdk/bin/dartaotruntime /opt/flutter/bin/cache/dart-sdk/bin/snapshots/frontend_server_aot.dart.snapshot --sdk-root /opt/flutter/bin/cache/artifacts/engine/common/flutter_patched_sdk/ --incremental --target=flutter --experimental-emit-debug-metadata -DFLUTTER_VERSION=3.41.6 -DFLUTTER_CHANNEL=stable -DFLUTTER_GIT_URL=https://github.com/flutter/flutter.git -DFLUTTER_FRAMEWORK_REVISION=db50e20168 -DFLUTTER_ENGINE_REVISION=425cfb54d0 -DFLUTTER_DART_VERSION=3.11.4 --output-dill /tmp/flutter_tools.FDMTJT/flutter_tool.OSYYCN/app.dill --packages /home/karla_rosalesc/Documents/rosales_karla/programacion_IV/programacion_4_manana_rosales/modulo_3/flutter/modulo06_widgets/.dart_tool/package_config.json -Ddart.vm.profile=false -Ddart.vm.product=false --enable-asserts --track-widget-creation --filesystem-scheme org-dartlang-root --initialize-from-dill build/b70f9274ac3b5ec9754be8774a3c9a1c.cache.dill.track.dill --verbosity=error --enable-experiment=alternative-invalidation-strategy
+[   +9 ms] executing: /home/alumnos/Android/Sdk/platform-tools/adb -s emulator-5554 shell -x logcat -v time -t 1
+[  +13 ms] <- compile package:modulo06_widgets/main.dart
+[  +26 ms] --------- beginning of main
+           06-16 06:10:18.387 I/GnssLocationProvider( 1850): WakeLock released by handleMessage(REPORT_SV_STATUS, 0, com.android.server.location.GnssLocationProvider$SvStatusInfo@eb83d6b)
+[  +12 ms] executing: /home/alumnos/Android/Sdk/platform-tools/adb version
+[   +8 ms] Android Debug Bridge version 1.0.41
+           Version 37.0.0-14910828
+           Installed as /work/alumnos/apps/Android/Sdk/platform-tools/adb
+           Running on Linux 6.17.0-35-generic (x86_64)
+[   +1 ms] executing: /home/alumnos/Android/Sdk/platform-tools/adb start-server
+[   +9 ms] Building APK
+[  +10 ms] executing: /snap/android-studio/230/jbr/bin/java -version
+[  +91 ms] Exit code 0 from: /snap/android-studio/230/jbr/bin/java -version
+[        ] openjdk version "21.0.10" 2026-01-20
+           OpenJDK Runtime Environment (build 21.0.10+-14961533-b1163.108)
+           OpenJDK 64-Bit Server VM (build 21.0.10+-14961533-b1163.108, mixed mode)
+[  +14 ms] Top-level Gradle build file not found, skipping migration of task "clean".
+[   +2 ms] executing: /snap/android-studio/230/jbr/bin/java --version
+[ +110 ms] Exit code 0 from: /snap/android-studio/230/jbr/bin/java --version
+[        ] openjdk 21.0.10 2026-01-20
+           OpenJDK Runtime Environment (build 21.0.10+-14961533-b1163.108)
+           OpenJDK 64-Bit Server VM (build 21.0.10+-14961533-b1163.108, mixed mode)
+[   +3 ms] Version of Java is different than impacted version, no migration attempted.
+[  +20 ms] CMake project not found, skipping support Android 15 16k page size migration.
+[   +8 ms] Using gradle from /home/karla_rosalesc/Documents/rosales_karla/programacion_IV/programacion_4_manana_rosales/modulo_3/flutter/modulo06_widgets/android/gradlew.
+[  +23 ms] LocalFile: '/home/karla_rosalesc/Documents/rosales_karla/programacion_IV/programacion_4_manana_rosales/modulo_3/flutter/modulo06_widgets/android/build.gradle.kts' doesn't provide an AGP version. Checking settings.
+[   +1 ms] LocalFile: '/home/karla_rosalesc/Documents/rosales_karla/programacion_IV/programacion_4_manana_rosales/modulo_3/flutter/modulo06_widgets/android/settings.gradle.kts' provides AGP version: 8.11.1
+[   +4 ms] Running Gradle task 'assembleDebug'...
+[   +1 ms] executing: [/home/karla_rosalesc/Documents/rosales_karla/programacion_IV/programacion_4_manana_rosales/modulo_3/flutter/modulo06_widgets/android/] /home/karla_rosalesc/Documents/rosales_karla/programacion_IV/programacion_4_manana_rosales/modulo_3/flutter/modulo06_widgets/android/gradlew --full-stacktrace --info -Pverbose=true -Ptarget-platform=android-x64 -Ptarget=/home/karla_rosalesc/Documents/rosales_karla/programacion_IV/programacion_4_manana_rosales/modulo_3/flutter/modulo06_widgets/lib/main.dart -Pbase-application-name=android.app.Application -Pdart-defines=RkxVVFRFUl9WRVJTSU9OPTMuNDEuNg==,RkxVVFRFUl9DSEFOTkVMPXN0YWJsZQ==,RkxVVFRFUl9HSVRfVVJMPWh0dHBzOi8vZ2l0aHViLmNvbS9mbHV0dGVyL2ZsdXR0ZXIuZ2l0,RkxVVFRFUl9GUkFNRVdPUktfUkVWSVNJT049ZGI1MGUyMDE2OA==,RkxVVFRFUl9FTkdJTkVfUkVWSVNJT049NDI1Y2ZiNTRkMA==,RkxVVFRFUl9EQVJUX1ZFUlNJT049My4xMS40 -Pdart-obfuscation=false -Ptrack-widget-creation=true -Ptree-shake-icons=false -Pfilesystem-scheme=org-dartlang-root assembleDebug
+[ +671 ms] Initialized native services in: /home/karla_rosalesc/.gradle/native
+[        ] Initialized jansi services in: /home/karla_rosalesc/.gradle/native
+[ +428 ms] The client will now receive all logging from the daemon (pid: 23609). The daemon log file: /home/karla_rosalesc/.gradle/daemon/8.14/daemon-23609.out.log
+[        ] Starting 2nd build in daemon [uptime: 2 mins 57.682 secs, performance: 99%, GC rate: 0.00/s, heap usage: 0% of 8 GiB, non-heap usage: 1% of 4 GiB]
+[        ] Using 22 worker leases.
+[        ] Now considering [/home/karla_rosalesc/Documents/rosales_karla/programacion_IV/programacion_4_manana_rosales/modulo_3/flutter/modulo06_widgets/android] as hierarchies to watch
+[        ] Watching the file system is configured to be enabled if available
+[        ] File system watching is active
+[        ] Starting Build
+[  +80 ms] Now considering [/opt/flutter/packages/flutter_tools/gradle, /home/karla_rosalesc/Documents/rosales_karla/programacion_IV/programacion_4_manana_rosales/modulo_3/flutter/modulo06_widgets/android] as hierarchies to watch
+[  +25 ms] Running Gradle task 'assembleDebug'... (completed in 1,209ms)
+[+5209 ms] Error: Gradle task assembleDebug failed with exit code 1
+[   +1 ms] "flutter run" took 7,368ms.
+[  +17 ms] 
+           #0      throwToolExit (package:flutter_tools/src/base/common.dart:34:3)
+           #1      RunCommand.runCommand (package:flutter_tools/src/commands/run.dart:910:9)
+           <asynchronous suspension>
+           #2      FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1590:27)
+           <asynchronous suspension>
+           #3      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+           <asynchronous suspension>
+           #4      CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+           <asynchronous suspension>
+           #5      FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:496:9)
+           <asynchronous suspension>
+           #6      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+           <asynchronous suspension>
+           #7      FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:431:5)
+           <asynchronous suspension>
+           #8      FlutterCommandRunner.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:307:33)
+           <asynchronous suspension>
+           #9      run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:104:11)
+           <asynchronous suspension>
+           #10     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+           <asynchronous suspension>
+           #11     main (package:flutter_tools/executable.dart:103:3)
+           <asynchronous suspension>
+
+
+[        ] Running 3 shutdown hooks
+[   +4 ms] Shutdown hooks complete
+[ +144 ms] exiting with code 1
