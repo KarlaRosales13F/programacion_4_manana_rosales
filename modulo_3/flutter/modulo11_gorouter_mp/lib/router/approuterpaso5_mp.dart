@@ -1,0 +1,51 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+import 'package:modulo11_gorouter_mp/screens/pantallaajustes_mp.dart';
+import 'package:modulo11_gorouter_mp/screens/pantallametricas_mp.dart';
+import 'package:modulo11_gorouter_mp/screens/scaffoldconnav_mp.dart';
+import '../providers/auth_provider_mp.dart';
+import '../screens/pantalla_servidores_mp.dart';
+import '../screens/pantalla_detalle_mp.dart';
+import '../screens/pantalla_login_mp.dart';
+import '../models/servidor_ssh_mp.dart';
+
+GoRouter appRouterPaso5(WidgetRef ref) => GoRouter(
+  initialLocation: '/servidores',
+  debugLogDiagnostics: true,
+  redirect: (context, state) {
+    final authState     = ref.read(authProvider);
+    final autenticado   = authState is Autenticado;
+    final enLogin       = state.matchedLocation == '/login';
+
+    if (!autenticado && !enLogin) return '/login';
+    if (autenticado && enLogin)   return '/servidores';
+    return null;
+  },
+  routes: [
+    ShellRoute(
+      builder: (context, state, child) => ScaffoldConNav(child: child),
+      routes: [
+        GoRoute(
+          path:    '/servidores',
+          builder: (_, __) => const PantallaServidores(),
+          routes: [
+            GoRoute(
+              path:    ':id',
+              builder: (context, state) => PantallaDetalle(
+                id:       state.pathParameters['id']!,
+                servidor: state.extra as ServidorSSH?,
+              ),
+            ),
+          ],
+        ),
+        GoRoute(path: '/metricas', builder: (_, __) => const PantallaMetricas()),
+        GoRoute(path: '/ajustes',  builder: (_, __) => const PantallaAjustes()),
+      ],
+    ),
+    GoRoute(
+      path:    '/login',
+      builder: (_, __) => const PantallaLogin(),
+    ),
+  ],
+);

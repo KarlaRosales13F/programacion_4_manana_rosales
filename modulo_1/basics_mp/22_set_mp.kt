@@ -1,0 +1,25 @@
+fun main() {
+    println("Set")
+    val puntos = setOf(100,200,300,400,500,400,100,300)
+    println("puntos set: ${puntos}")
+    println("Operaciones de conjuntos")
+    val clientesOro =setOf(2,4,6,8,10)
+    val clientesPlatino =setOf(3,6,9,12)
+    println("clientesOro set: ${clientesOro}")
+    println("clientesPlatino set: ${clientesPlatino}")
+    println("union:  ${clientesOro subtract clientesPlatino}")
+    println("interseccion: ${clientesOro intersect clientesPlatino}")
+    println("substraccion: ${clientesOro subtract clientesPlatino}")
+    println("clientesOro set: ${clientesOro}")
+    println("clientesPlatino set: ${clientesPlatino}")
+    
+    println("Set Mutable")
+    val tags =mutableSetOf("loyaltee", "fidelizacion", "recompensas")
+    println(tags)
+    tags.add("loyaltee")
+    tags.add("clientes")
+    tags.remove("fidelizacion")
+    println("Verificar si elemento existe ${"loyaltee" in tags}")
+    println("Verificar si elemento existe ${"fidelizacion" in tags}")
+ 
+}
